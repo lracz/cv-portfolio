@@ -115,7 +115,7 @@ export const translations = {
     "edu.the": "Tokaj-Hegyalja Egyetem, Sárospatak",
     "edu.cc": "Full-Stack Fejlesztő",
     "contact.title": "Építsünk együtt valamit",
-    "contact.sub": "Van ötleted, projekted, vagy csak köszönnél? Szívesen hallak!",
+    "contact.sub": "Van ötleted, projekted, vagy csak köszönnél? Szívesen meghallgatlak.",
     "contact.phone": "Telefon",
     "contact.langs": "Nyelvek",
     "contact.langvals": "Magyar · Angol (B2) · Szlovák (C1)",
