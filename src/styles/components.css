@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-full);
+  transition: all var(--duration-fast) var(--ease-smooth);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn--primary {
+  color: #ffffff;
+  background: var(--accent-primary);
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-smooth);
+  z-index: -1;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.4);
+}
+
+.btn--primary:hover::before {
+  opacity: 1;
+}
+
+.btn--outline {
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--glass-border);
+}
+
+.btn--outline:hover {
+  border-color: var(--accent-primary);
+  background: rgba(108, 99, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+.btn--accent {
+  color: #ffffff;
+  background: var(--accent-secondary);
+  box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.btn--accent:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 212, 170, 0.4);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3); }
+  50% { transform: scale(1.05); box-shadow: 0 4px 25px rgba(0, 212, 170, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3); }
+}
+
+
+/* Glass Cards */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-subtle);
+  transition: transform var(--duration-normal) var(--ease-smooth),
+              border-color var(--duration-normal) var(--ease-smooth);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] .glass-card:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.badge--category {
+  background: rgba(108, 99, 255, 0.1);
+  color: var(--accent-primary);
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.5px;
+}
+
+.badge--secondary {
+  background: rgba(0, 212, 170, 0.1);
+  color: var(--accent-secondary);
+}
+
+/* Social Links */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-link:hover {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 0.5rem 1.5rem;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.filter-tab.active {
+  color: #fff;
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}

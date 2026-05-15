@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Variables - Design Tokens
+   ========================================================================== */
+:root {
+  /* Colors */
+  --accent-primary: #6c63ff;
+  --accent-secondary: #00d4aa;
+  --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  --success: #00d4aa;
+  --error: #ff6b6b;
+
+  /* Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --fs-xs: 0.875rem;
+  --fs-small: 1rem;
+  --fs-body: 1.125rem;
+  --fs-body-lg: 1.25rem;
+  --fs-h4: 1.5rem;
+  --fs-h3: 2rem;
+  --fs-h2: 2.5rem;
+  --fs-h1: 3.5rem;
+  --fs-hero: clamp(3rem, 8vw, 5rem);
+
+  /* Font Weights */
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  /* Layout */
+  --container-max: 1200px;
+  --nav-height: 80px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Animation */
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+
+  /* Z-Index */
+  --z-nav: 100;
+  --z-modal: 200;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-tertiary: #1a1a24;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+  --text-muted: #6b6b7b;
+  --glass-bg: rgba(26, 26, 36, 0.4);
+  --glass-bg-hover: rgba(26, 26, 36, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f5f5f8;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8e8ed;
+  --text-primary: #12121a;
+  --text-secondary: #4a4a5a;
+  --text-muted: #8a8a9a;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
