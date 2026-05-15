@@ -3,11 +3,14 @@ import { useLanguage } from '../hooks/useLanguage'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 export default function Hero() {
-  const { t } = useLanguage()
+  const { lang, t } = useLanguage()
   const [ref, isVisible] = useScrollReveal()
   const [typedRole, setTypedRole] = useState('')
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
+
+  const cvPath = lang === 'hu' ? '/CV/ResumeHU.pdf' : '/CV/ResumeEN.pdf'
+  const cvFileName = lang === 'hu' ? 'Racz_Laszlo_CV.pdf' : 'Racz_Laszlo_Resume.pdf'
 
   // ?nohero=1 param handling
   const isNoHero = new URLSearchParams(window.location.search).get('nohero') === '1'
@@ -62,7 +65,7 @@ export default function Hero() {
           <p className="hero__description">{t('hero.desc')}</p>
           <div className="hero__cta">
             <a href="#projects" className="btn btn--primary">{t('hero.cta1')}</a>
-            <a href="/cv.pdf" className="btn btn--outline" download="Racz_Laszlo_CV.pdf">{t('hero.cta2')}</a>
+            <a href={cvPath} className="btn btn--outline" download={cvFileName}>{t('hero.cta2')}</a>
             <a href="#contact" className="btn btn--accent hero__internship-btn">{t('hero.cta3')}</a>
           </div>
 
