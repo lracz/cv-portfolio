@@ -333,7 +333,7 @@
 .timeline__company { font-size: var(--fs-small); color: var(--accent-secondary); margin-bottom: var(--space-md); }
 
 /* ── PROJECTS ── */
-.projects__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--space-xl); }
+.projects__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-xl); }
 .project-card { border-radius: var(--radius-lg); overflow: hidden; background: var(--glass-bg); border: 1px solid var(--glass-border); transition: all var(--duration-normal) var(--ease-smooth); display: flex; flex-direction: column; position: relative; }
 .project-card:hover { transform: translateY(-6px); border-color: var(--accent-primary); box-shadow: 0 12px 40px rgba(108, 99, 255, 0.15); }
 
