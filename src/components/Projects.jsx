@@ -3,12 +3,55 @@ import { useLanguage } from '../hooks/useLanguage'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 
 const projectData = [
-  { id: 'thermo', category: 'ai', img: '/projects/thermo.png', badge: 'AI / Startup', tech: ['Next.js', 'Gemini AI', 'Firebase', 'IoT'] },
-  { id: 'neptune', category: 'fullstack', img: '/projects/neptune.png', badge: 'Full-Stack / Education', tech: ['TypeScript', 'Next.js', 'Vercel'], link: 'https://github.com/lracz/neptune-4-max-training' },
-  { id: 'gravity', category: 'ai', img: '/projects/gravity.png', badge: 'AI Agent', tech: ['Node.js', 'Gemini AI', 'MCP', 'Telegram'] },
-  { id: 'flappy', category: 'ai', img: '/projects/flappy.png', badge: 'Machine Learning', tech: ['Python', 'NEAT', 'Neural Networks'], link: 'https://github.com/lracz/FlappyAI' },
-  { id: 'muszak', category: 'fullstack', img: '/projects/muszak.png', badge: 'Full-Stack / Enterprise', tech: ['C#', '.NET'], link: 'https://github.com/lracz/muszak-tervezo' },
-  { id: 'shop', category: 'fullstack', img: '/projects/shop.png', badge: 'Full-Stack / E-commerce', tech: ['TypeScript', 'React', 'Spring Boot', 'Java'], link: 'https://github.com/lracz/SpringReactShop' },
+  { 
+    id: 'thermo', 
+    category: 'ai', 
+    img: '/projects/thermo.png', 
+    badge: 'AI / Startup', 
+    tech: ['Next.js', 'Gemini AI', 'Firebase', 'IoT'],
+    demo: 'https://thermo-sense-ai.vercel.app/'
+  },
+  { 
+    id: 'neptune', 
+    category: 'fullstack', 
+    img: '/projects/neptune.png', 
+    badge: 'Full-Stack / Education', 
+    tech: ['TypeScript', 'Next.js', 'Vercel'], 
+    link: 'https://github.com/lracz/neptune-4-max-training',
+    demo: 'https://neptune-4-max-training.vercel.app/'
+  },
+  { 
+    id: 'gravity', 
+    category: 'ai', 
+    img: '/projects/gravity.png', 
+    badge: 'AI Agent', 
+    tech: ['Node.js', 'Gemini AI', 'MCP', 'Telegram'] 
+  },
+  { 
+    id: 'flappy', 
+    category: 'ai', 
+    img: '/projects/flappy.png', 
+    badge: 'Machine Learning', 
+    tech: ['Python', 'NEAT', 'Neural Networks'], 
+    link: 'https://github.com/lracz/FlappyAI' 
+  },
+  { 
+    id: 'muszak', 
+    category: 'fullstack', 
+    img: '/projects/muszak.png', 
+    badge: 'Full-Stack / Enterprise', 
+    tech: ['C#', '.NET'], 
+    link: 'https://github.com/lracz/muszak-tervezo',
+    demo: 'https://muszak-tervezo.vercel.app/'
+  },
+  { 
+    id: 'shop', 
+    category: 'fullstack', 
+    img: '/projects/shop.png', 
+    badge: 'Full-Stack / E-commerce', 
+    tech: ['TypeScript', 'React', 'Spring Boot', 'Java'], 
+    link: 'https://github.com/lracz/SpringReactShop' 
+  },
 ]
 
 function ProjectCard({ p }) {
@@ -19,7 +62,10 @@ function ProjectCard({ p }) {
       <div className="project-card__image-wrapper">
         <img src={p.img} alt={p.id} className="project-card__img" loading="lazy" />
         <div className="project-card__overlay">
-           {p.link && <a href={p.link} target="_blank" rel="noreferrer" className="btn btn--primary btn--sm">GitHub</a>}
+           <div className="project-card__actions">
+             {p.demo && <a href={p.demo} target="_blank" rel="noreferrer" className="btn btn--primary btn--sm">{t('proj.demo')}</a>}
+             {p.link && <a href={p.link} target="_blank" rel="noreferrer" className="btn btn--outline btn--sm">GitHub</a>}
+           </div>
         </div>
       </div>
       <div className="project-card__body">
